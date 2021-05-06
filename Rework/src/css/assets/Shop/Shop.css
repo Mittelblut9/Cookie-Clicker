@@ -1,0 +1,59 @@
+.ccShop {
+    float: left;
+    width: 300px;
+    height: 100vh;
+    border-right: 2px solid rgb(44, 44, 44);
+}
+
+.ccShop header {
+    height: 30px;
+    background: rgb(236, 236, 236);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.ccShop header h1 {
+    margin: 0;
+}
+
+.ccShopItem:first-child {
+    margin-top: 100px;
+}
+
+.ccShopItem:last-child {
+    border-bottom: 2px solid black;
+}
+
+.ccShopItem {
+    cursor: pointer;
+    height: 70px;
+    padding: 10px 0;
+    border-top: 2px solid black;
+}
+
+.ccShopItem:hover {
+    transform: translateY(-1px);
+}
+
+.ccShopItem img {
+    width: 50px;
+}
+
+.ccShopItemName {
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.ccShopItemPrice {
+    float: right;
+    margin: 30px 0 0 0;
+    padding: 0 20px;
+}
+
+.ccShopItemPrice span {
+    margin: 0 10px 0 0;
+}
+
+.ccShopItemPrice img {
+    width: 30px
+}
