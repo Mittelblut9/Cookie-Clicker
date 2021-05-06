@@ -24,21 +24,16 @@
 
         <meta name="author" content="BlackDayz &copy;" />
         <meta name="robots" content="index, follow" />
-        <link rel="shortcut icon" href="https://www.blackdayz.de/src/img/logo/shortcuticon.png">
-        <title>Cookie Clicker Remake</title>
+        <title>Cookie Clicker Rework</title>
         <meta name="description" content="A very easy Cookie Clicker using Javascript">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="stylesheet" href="src/css/style.css">
-        <link rel="stylesheet" href="src/css/media.css">
         
         <link rel="stylesheet" href="https://use.typekit.net/xue1nky.css">
-        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="src/js/main.js" type="text/javascript" defer></script>
+        <script src="//code.jquery.com/jquery-latest.min.js"></script>
+        <script src="src/js/main.js" type="module"></script>
     </head>
-    <body onmousedown="event.preventDefault ? event.preventDefault() : event.returnValue = false" oncontextmenu="return false">
+    <body>
         
         <noscript>
             <span>  
@@ -48,74 +43,8 @@
             </span>
         </noscript>
 
-        <div class="wrapper">
+        <canvas id="cookie_clicker_canvas_background"></canvas>
 
-            <span id="buyed" class="buyed">Du hast erfolgreich&nbsp;"<span id="buyed-content"></span>"&nbsp;gekauft</span>
-            <span id="error" class="error"></span>
-            
-            <div id="shop">
-                <p class="shop-header">Cookie Shop</p>
-                <div id="autoclicker" class="shop-item">
-                    <span class="shop-item-name">Auto&nbsp;Clicker</span><br /><br />
-                    <span class="shop-item-cost">Cost: <span id="cost-autoclicker"></span></span>
-                    <img class="shop-item-img" src="src/img/shop/Auto-Clicker.png" />
-                </div>
-                <div id="grandma" class="shop-item display-none"><span class="shop-item-name">Grandma</span><br /><br />
-                    <span class="shop-item-cost">Cost: <span id="cost-grandma"></span></span>
-                    <img class="shop-item-img" src="src/img/shop/Grandma.png" style="margin-top: -40px"/>
-                </div>
-
-                <div id="miners" class="shop-item display-none"><span class="shop-item-name">Miners</span><br /><br />
-                    <span class="shop-item-cost">Cost: <span id="cost-miners"></span></span>
-                    <img class="shop-item-img" src="src/img/shop/miners.png" style="margin-top: -40px"/>
-                </div>
-
-                <div id="wizard" class="shop-item display-none"><span class="shop-item-name">Wizard</span><br /><br />
-                    <span class="shop-item-cost">Cost: <span id="cost-wizard"></span></span>
-                    <img class="shop-item-img" src="src/img/shop/Wizard.svg" style="margin-top: -40px"/>
-                </div>
-
-            </div>
-
-            <div id="clicker">
-                <div id="ergebnis">You have <span id="ergebnis-output"></span> Cookies!</div>
-                <div id="autoclick-div">You gain <span id="autoclick-output"></span> Cookies per Seconds</div>
-                <div id="Cookie" >
-                    <img src="src/svg/cookie.svg" id="cookie-svg" >
-                </div>
-            </div>
-
-
-            <audio id="cookieclicksound" preload="auto">
-                <source src="src/mp3/Cookie_Clicker.mp3" />
-            </audio>
-
-            <div id="cookies-bg"></div>
-
-            <div id="author">
-                <div class="volume" id="volume-on-off"><i class="las la-volume-off" id="volume-on"></i><i class='las la-volume-up' id='volume-off'></i></div>
-                <p><a href="//www.blackdayz.de" target="_blank" rel="noopener">Author: www.blackdayz.de</a></p>
-            </div>
-            
-            <div id="profile-stats">
-                <div id="profile-button"><i class="las la-angle-double-left"></i></div>
-                <div id="profile-close"><i class="las la-angle-double-right"></i></div>
-                <div class="profile-header"><p>Your full Stats</p></div>
-                <div class="profile-stats-detail">
-                    <div class="profile-stats-cookies"><span id="profile-stats-cookies"></span> Cookies!</div>
-                    <div class="profile-stats-persecond"><span id="profile-stats-persecond"></span> Cookies per sec</div>
-                    <div class="profile-stats-clicker"><span id="profile-stats-clicker"></span> Grandma items</div>
-                    <div class="profile-stats-grandma"><span id="profile-stats-grandma"></span> Miner items</div>
-                    <div class="profile-stats-wizard"><span id="profile-stats-wizard"></span> Wizard items</div>
-                </div>
-            </div>
-        </div>
+        <div id="cc_wrap"></div>
     </body>
 </html>
-
-
-<!--
-    
-Cookie: https://www.flaticon.com/free-icon/cookie_808749?term=cookie&page=1&position=50
-
--->
