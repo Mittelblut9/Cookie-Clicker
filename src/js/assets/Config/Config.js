@@ -53,5 +53,14 @@ export const config = {
                 }
             ]
         }
+    ],
+    ChangeLog: [
+        {
+            Version: "0.0.1" [
+                {
+
+                }
+            ]
+        }
     ]
 };

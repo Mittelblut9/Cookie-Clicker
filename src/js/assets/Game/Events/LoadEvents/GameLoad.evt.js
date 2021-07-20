@@ -1,7 +1,13 @@
 import {config} from "../../../Config/Config.js";
-import {InsertCookie} from "../../../Cookie/Cookie.js";
+import {getCookieValue, InsertCookie} from "../../../Cookie/Cookie.js";
 import {ccScoreHtml, ccShop, ccShopItem} from "../../../HTML/html.js";
-import {cc_Csps_exp, cc_Score_exp, cc_Cpc_exp, cc_ShopItems_exp, Error} from "../../Variables/Variables.js"
+import {
+    cc_Csps_exp,
+    cc_Score_exp,
+    cc_Cpc_exp,
+    cc_ShopItems_exp,
+    Error
+} from "../../Variables/Variables.js"
 
 export function LoadStats() { // Check if Cookies are vailable
     var cc_Score = cc_Score_exp();
@@ -58,24 +64,24 @@ export function LoadShopItems() {
     }
 
 
-
     $('.ccShopItem').click(function () {
         var cc_Score = cc_Score_exp();
         var cc_Csps = cc_Csps_exp();
 
         let Name = $(this).attr('id');
+
         if (cc_Score >= ShopItems[Name].Price) {
             cc_Score -= + $(this).find('.ccShopItemPrice span').html();
             cc_Csps = + cc_Csps + config.Game[0].ShopConfig[0].DefaultValues[0].CspsValue;
             ShopItems[Name].Price = ShopItems[Name].Price * config.Game[0].ShopItems[0][Name].PriceIncrease;
-            $(this).find('.ccShopItemPrice span').html(parseInt(ShopItems[Name].Price))
-            ShopItems[Name].Count++;
+            $(this).find('.ccShopItemPrice span').html(parseInt(ShopItems[Name].Price));
+            ShopItems[Name].Count ++;
 
             InsertCookie('cc_ShopItems', JSON.stringify(ShopItems));
             InsertCookie('cc_Score', cc_Score);
             InsertCookie('cc_Csps', cc_Csps);
 
-            if(ShopItems[Name].Count === ShopItems[Name].NextItemIncrease) {
+            if (ShopItems[Name].Count === ShopItems[Name].NextItemIncrease) {
                 ShopItems[Name].NextItem = 1;
                 InsertCookie('cc_ShopItems', JSON.stringify(ShopItems));
                 LoadShopItems();
